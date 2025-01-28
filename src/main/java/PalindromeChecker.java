@@ -40,13 +40,16 @@ public boolean palindrome(String word)
   String a = "";
   String b = "";
   for (int i = 0; i < word.length(); i++){
-    if(word.substring(i,i+1).equals("")){
+    if(word.substring(i,i+1).equals("") || Character.isLetter(word.charAt(i))==false){
       
     } else {
       a = a + word.substring(i,i+1);
       b = b + word.substring(i,i+1);
     }
   }
+  a = a.toLowerCase();
+  b = b.toLowerCase();
+  
   if(reverse(a).equals(b)){return(true);}
   return false;
 }
